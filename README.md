@@ -1,37 +1,29 @@
-# Portfolio
+# portfolio
 
-Static React + Vite site. No backend — deploys free to Vercel, Netlify or Cloudflare Pages.
+My personal site. Websites, Shopify, web/mobile apps and n8n automations / virtual assistants.
 
-## Edit your details
-Everything personal is in `src/content/`:
+Built with React, TypeScript and Vite. No backend, it's all static.
 
-| File | What's in it |
-|---|---|
-| `profile.ts` | Name, email, links, availability, **experience**, **skills** (lines marked `EDIT`) |
-| `tracks.ts` | The six "What are you hiring for?" services — headlines, deliverables, timelines |
-| `projects.ts` | Project titles, briefs, approach, stack (shown on cards + case studies) |
+## running it
 
-Each project's full design set (brand palette, typography, 5–6 designed screens) lives in its own file in `src/projects/` — e.g. `src/projects/saltline.tsx`. To add a project: add an entry in `projects.ts`, create `src/projects/<id>.tsx` (copy an existing one), and register it in `src/projects/index.ts`. Case studies are served at `/work/<id>`.
-
-To replace a concept with real client work, change its text and screens and remove the "Concept build" label in `src/pages/ProjectPage.tsx`.
-
-## Tailored links
-Send clients a link that opens on the right service:
-
-- `/?for=web` · `/?for=ecommerce` · `/?for=app`
-- `/?for=assistant` · `/?for=automation` · `/?for=crm`
-
-Archived (hidden) network projects are in `archive/` — not built into the site.
-
-## Run locally (Docker Desktop)
 ```
-docker compose up -d --build     # http://localhost:8090
-docker compose down
+npm install
+npm run dev
 ```
 
-## Deploy free on Vercel
-1. Push this folder to a GitHub repo.
-2. vercel.com → Add New Project → import the repo. Framework is detected as Vite; `vercel.json` sets the rest.
-3. Every push to `main` redeploys.
+or with docker:
 
-Netlify / Cloudflare Pages: build command `npm run build`, output directory `dist`.
+```
+docker compose up -d --build
+```
+
+then open http://localhost:8090
+
+## notes
+
+- my info, services and skills are in `src/content`
+- screens for each case study are in `src/projects`
+- you can link straight to a service with `?for=`, e.g. `/?for=ecommerce` or `/?for=assistant`
+- the projects are concept builds, not real clients (yet)
+
+Hosted on Vercel.
