@@ -1,0 +1,9 @@
+name: portfolio
+
+services:
+  web:
+    build: .
+    container_name: portfolio-web
+    ports:
+      - "8090:80"
+    restart: unless-stopped
